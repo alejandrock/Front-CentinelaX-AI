@@ -1,0 +1,365 @@
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #17324D;
+  background: #F5F8FC;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #F5F8FC;
+  color: #17324D;
+}
+
+button, input { font: inherit; }
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #D9E4F1;
+  background: #fff;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #E3ECF7;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #0B63CE;
+  color: #fff;
+  font-weight: 700;
+}
+
+.brand span {
+  display: block;
+  color: #6B7D90;
+  font-size: 14px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  text-align: left;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: #17324D;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  background: #EAF4FF;
+  color: #0B63CE;
+  font-weight: 600;
+}
+
+.content {
+  padding: 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #0B63CE;
+}
+
+.page-header p {
+  margin: 6px 0 0;
+  color: #6B7D90;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 18px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #0B63CE;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #EAF4FF;
+  color: #0B63CE;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+  background: #fff;
+  border: 1px solid #E3ECF7;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(21, 61, 109, .06);
+}
+
+.card-head h3 { margin: 0; }
+.card-head p { margin: 6px 0 0; color: #6B7D90; }
+
+.kpi-card strong.kpi-value {
+  display: block;
+  font-size: 34px;
+  margin: 8px 0;
+}
+
+.kpi-value.medium {
+  font-size: 28px;
+  display: block;
+  margin-top: 8px;
+}
+
+.muted { color: #6B7D90; }
+.small { font-size: 12px; }
+
+.chart-box {
+  height: 220px;
+  border: 1px dashed #D9E4F1;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #F8FBFF, #fff);
+  position: relative;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  border-top: 4px solid;
+  height: 2px;
+  top: 50%;
+}
+
+.line.blue {
+  border-color: #0B63CE;
+  transform: skewY(-8deg) translateY(-30px);
+}
+
+.line.orange {
+  border-color: #FB8C00;
+  transform: skewY(10deg) translateY(30px);
+}
+
+.donut {
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: conic-gradient(#C62828 0 18%, #FB8C00 18% 44%, #FDD835 44% 72%, #43A047 72% 100%);
+  position: relative;
+}
+
+.donut::after {
+  content: '';
+  position: absolute;
+  inset: 42px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border-bottom: 1px solid #EEF3F9;
+  text-align: left;
+}
+
+.table th {
+  color: #6B7D90;
+  font-size: 13px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pill.critical { background: #FDECEC; color: #C62828; }
+.pill.high { background: #FFF1E6; color: #C96A00; }
+.pill.medium { background: #FFF8D6; color: #8F7000; }
+.pill.low { background: #E8F7EC; color: #2D7E35; }
+
+.form-inline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.toolbar.end {
+  justify-content: flex-end;
+}
+
+.warn-card {
+  background: #FFF4E8;
+  border-color: #FFD4A6;
+}
+
+.scorebar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.timeline {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #0B63CE;
+  color: #fff;
+  font-weight: 700;
+}
+
+.timeline-item h4 { margin: 0 0 6px; }
+.timeline-item p { margin: 0; color: #6B7D90; }
+
+.login-page {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.login-hero {
+  background: linear-gradient(135deg, #0B63CE, #084B9A);
+  color: #fff;
+  padding: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 28px;
+}
+
+.login-hero h1 {
+  font-size: 46px;
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
+.login-hero p {
+  color: rgba(255,255,255,.9);
+  max-width: 520px;
+  font-size: 18px;
+}
+
+.chip {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 16px 40px rgba(18,46,79,.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: 16px;
+}
+
+.login-card h2 {
+  margin: 0;
+  color: #0B63CE;
+}
+
+.login-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .grid-4, .grid-3, .grid-2, .login-page { grid-template-columns: 1fr; }
+  .page-header, .scorebar { flex-direction: column; }
+}
