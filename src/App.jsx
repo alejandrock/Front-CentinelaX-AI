@@ -61,7 +61,7 @@ function Sidebar({ current, setCurrent }) {
       <div className="brand">
         <div className="brand-icon">CX</div>
         <div>
-          <strong>CentinelaX</strong>
+          <strong>CentinelaX AI</strong>
           <span>AI Security</span>
         </div>
       </div>
